@@ -1,30 +1,28 @@
-let inf = 10;
-let sup = 20;
-let message = "choisir un chiffre";
-y = "plus petit";
-z = "plus grand";
-
-function randomIntFromInterval(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-const chiffre = randomIntFromInterval(10, 20);
-console.log(chiffre);
+let message = "voulez vous un café ? (o/n)";
+let oui = "o";
+let non = "n";
+let y = "ok super";
+let z = "dommage";
 
 function question(x) {
-  while (x != chiffre) {
-    x = prompt(message);
+  x = prompt(message);
+  alert(x);
+  document.write(message + "<br>");
+  document.write(x + "<br>");
 
-    if (x < chiffre) {
-      alert(z);
-    }
-    if (x > chiffre) {
-      alert(y);
-    }
-    if (x == chiffre) {
-      alert("gagné");
-    }
+  while (x != oui && x != non) {
+    x = prompt(message);
+    alert(x);
+    document.write(message + "<br>");
+    document.write(x + "<br>");
   }
-  document.write("vous avez gagné");
+
+  if (x == oui) {
+    document.write(y + "<br>");
+  }
+  if (x == non) {
+    document.write(z + "<br>");
+  }
 }
+
 question();
